@@ -26,6 +26,12 @@
 # this is the 3D rendering engine.  its pretty easy to install:
 # sudo apt-get install povray povray-includes
 #
+#  example install:
+#  wget ftp://ftp.cadsoft.de/eagle/program/6.2/eagle-lin-6.2.0.run
+#  sh ./eagle-lin-6.2.0.run ~
+#  echo "export PATH=\"\$PATH:~/eagle-6.2.0/bin\"" >> ~/.bashrc
+#  source ~/.bashrc
+#
 #########################################################################
 
 #init up
@@ -38,9 +44,7 @@ FILELIST=""
 echo "Making Files..."
 mkdir -p "$TO_DIR"
 mkdir -p "$TO_DIR/gerber"
-mkdir -p "$TO_DIR/ps"
 mkdir -p "$TO_DIR/eagle"
-mkdir -p "$TO_DIR/renders"
 
 #create our gerber files!
 echo "Creating Gerber Files..."
@@ -63,45 +67,13 @@ cp $BOARD/*.drl $TO_DIR/gerber
 rm -rf $TO_DIR/gerber/*.gpi 
 rm -rf $TO_DIR/gerber/*.dri 
 
-echo "Creating PS Files..."
-eagle -X -N -d PS -o "$TO_DIR/ps/Schematic.ps" $BOARD/*.sch Nets Busses Symbols Names Values
-eagle -X -N -d PS -o "$TO_DIR/ps/ComponentTraces.ps" $BOARD/*.brd Top Pad Via Dimension tGND_GNDA
-eagle -X -N -d PS -o "$TO_DIR/ps/ComponentSilkscreen.ps" $BOARD/*.brd Pad Via Dimension tPlace tNames tDocu tValues
-eagle -X -N -d PS -o "$TO_DIR/ps/CopperTraces.ps" $BOARD/*.brd Bottom Pad Via Dimension
-eagle -X -N -d PS -o "$TO_DIR/ps/CopperSilkscreen.ps" $BOARD/*.brd Pad Via Dimension bPlace bNames bDocu
-eagle -X -N -d PS -o "$TO_DIR/ps/TopCream.ps" $BOARD/*.brd Dimension tCream
-eagle -X -N -d PS -o "$TO_DIR/ps/BottomCream.ps" $BOARD/*.brd Dimension bCream
-eagle -X -N -d PS -o "$TO_DIR/ps/FabDrawing.ps" $BOARD/*.brd Dimension tPlace tOrigins tNames tValues tCream Holes Document Reference tDocu
-
-#convert to pdf...
-echo "Converting to PDF..."
-cp -a "$TO_DIR/ps" "$TO_DIR/pdf"
-for PS in $TO_DIR/pdf/*.ps
-do
-	TO_FILE=`basename $PS .ps`.pdf
-	ps2pdf $PS $TO_DIR/pdf/$TO_FILE
-done
-rm $TO_DIR/pdf/*.ps
-
-#convert to png...
-echo "Converting to PNG..."
-cp -a "$TO_DIR/ps" "$TO_DIR/png"
-for PS in $TO_DIR/png/*.ps
-do
-	TO_FILE=`basename $PS .ps`.png
-	echo "gs -dNOPAUSE -dBATCH -sDEVICE=png256 -sOutputFile=$TO_DIR/png/$TO_FILE $PS"
-	gs -dNOPAUSE -dBATCH -sDEVICE=png256 -sOutputFile=$TO_DIR/png/$TO_FILE $PS
-done
-rm $TO_DIR/png/*.ps
-
 #render our board with POVRay and eagle3d - high quality
 if [ -f ${BOARD}/${BOARD}.pov ]
 then
 	echo "Rendering board with eagle3D and POVRay..."
 	#eagle -X -N -d eagle3D/ulp/3d41.ulp -o "$TO_DIR/renders/render.pov" $BOARD/*.brd
-	povray eagle3D/render.ini +I${BOARD}/${BOARD}.pov +Otemp.png +FN +W1200 +H1024 +Q9 +A +AM2 -D -V +WL0
-	mv temp.png ${TO_DIR}/renders/${BOARD}.png
-	cp ${BOARD}/*.pov ${TO_DIR}/renders
+	povray eagle3D/render.ini +I${BOARD}/${BOARD}.pov +O${TO_DIR}${BOARD}.png +FN +W1200 +H1024 +Q9 +A +AM2 -D -V +WL0
+	#cp ${BOARD}/*.pov ${TO_DIR}/renders
 else
 	echo "No .pov file found, not rendering 3D version of board."
 fi
