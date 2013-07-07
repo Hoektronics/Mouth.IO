@@ -58,7 +58,7 @@ void setup()
   bitSet(MCUCR, 4);
 }
 
-void reset()
+void wipeScreen()
 {
   //set our anode pins high impedance, high state
   for (byte i=0; i<XDIM; i++)
@@ -80,7 +80,11 @@ void reset()
     pinMode(analogPins[i], INPUT);
     digitalWrite(i, LOW);
   }
+}
 
+void reset()
+{
+  wipeScreen();
   clearFrameBuffer();	
 }
 
@@ -101,16 +105,29 @@ int lastTime = 0;
 
 void loop()
 {
-//  frameIn();
 
-  /*
-  if (millis()-lastTime > 500)
+  int speed = 250;
+  
+  int myend = millis() + speed;
+  while (millis() < myend)
   {
-    frameOut();
-    lastTime = millis();
+    frameIn();
+    drawFrame();
   }
-  */
 
+  wipeScreen();
+
+  myend = millis() + speed;
+  while (millis() < myend)
+  {
+    frameIn();
+  }
+
+  //whats our framerate?
+  //Serial.print("FR:");
+  //Serial.println(millis() - lastTime, DEC);
+  //lastTime = millis();
+  
   drawFrame();
 }
 

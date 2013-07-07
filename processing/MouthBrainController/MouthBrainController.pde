@@ -2,7 +2,7 @@ import processing.net.*;
 import processing.serial.*;
 
 // CONFIGURATION
-int SERIAL_PORT = 0;  //-1 to list ports, non-negative to choose the port.
+int SERIAL_PORT = 8;  //-1 to list ports, non-negative to choose the port.
 int SERIAL_RATE = 115200;
 int NETWORK_PORT = 6683; // M-O-U-F
 String MB_VERSION = "0001";
@@ -99,6 +99,9 @@ void initComms() {
     inputBufferSync = false;
     SERIAL = new Serial(this, Serial.list()[SERIAL_PORT], SERIAL_RATE);
     SERIAL.buffer(1);
+    
+    print("Connecting to ");
+    println(Serial.list()[SERIAL_PORT]);
   }
   else
   {
@@ -110,7 +113,7 @@ void initComms() {
 
 void serialEvent(Serial myPort)
 {
-  //println("IN:" + myPort.readString());
+  println("IN:" + myPort.readString());
   char c = myPort.readChar();
 
   //double check we got a valid character.
