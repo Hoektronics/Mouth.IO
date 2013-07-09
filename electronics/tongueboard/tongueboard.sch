@@ -492,7 +492,7 @@
 </library>
 <library name="Hoektronics">
 <packages>
-<package name="FPC-PCB-32">
+<package name="FPC-32-WIRE">
 <smd name="P$1" x="-7.75" y="0" dx="0.3" dy="3.5" layer="1" rot="R180"/>
 <smd name="P$2" x="-7.25" y="0" dx="0.3" dy="3.5" layer="1" rot="R180"/>
 <smd name="P$3" x="-6.75" y="0" dx="0.3" dy="3.5" layer="1" rot="R180"/>
@@ -529,6 +529,53 @@
 <wire x1="8.25" y1="2" x2="8.25" y2="-3.5" width="0.1" layer="48"/>
 <wire x1="8.25" y1="-3.5" x2="-8.25" y2="-3.5" width="0.1" layer="48"/>
 <wire x1="-8.25" y1="-3.5" x2="-8.25" y2="2" width="0.1" layer="48"/>
+</package>
+<package name="FPC-32-HORIZONTAL">
+<smd name="P$1" x="-7.75" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$2" x="-7.25" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$3" x="-6.75" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$4" x="-6.25" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$5" x="-5.75" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$6" x="-5.25" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$7" x="-4.75" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$8" x="-4.25" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$9" x="-3.75" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$10" x="-3.25" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$11" x="-2.75" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$12" x="-2.25" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$13" x="-1.75" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$14" x="-1.25" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$15" x="-0.75" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$16" x="-0.25" y="0.5" dx="0.3" dy="1.2" layer="1" rot="R180"/>
+<smd name="P$17" x="0.25" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$18" x="0.75" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$19" x="1.25" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$20" x="1.75" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$21" x="2.25" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$22" x="2.75" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$23" x="3.25" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$24" x="3.75" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$25" x="4.25" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$26" x="4.75" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$27" x="5.25" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$28" x="5.75" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$29" x="6.25" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$30" x="6.75" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$31" x="7.25" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<smd name="P$32" x="7.75" y="0.5" dx="0.3" dy="1.2" layer="1"/>
+<wire x1="-11.25" y1="0" x2="11.25" y2="0" width="0.1" layer="48"/>
+<wire x1="11.25" y1="0" x2="11.25" y2="-3" width="0.1" layer="48"/>
+<wire x1="11.25" y1="-3" x2="-11.25" y2="-3" width="0.1" layer="48"/>
+<wire x1="-11.25" y1="-3" x2="-11.25" y2="0" width="0.1" layer="48"/>
+<wire x1="11.25" y1="-4" x2="-11.25" y2="-4" width="0.1" layer="48"/>
+<wire x1="-11.25" y1="-4" x2="-11.25" y2="-3" width="0.1" layer="48"/>
+<wire x1="11.25" y1="-3" x2="11.25" y2="-4" width="0.1" layer="48"/>
+<text x="-8" y="-1.25" size="0.8128" layer="21" font="vector">1</text>
+<text x="-6.75" y="-2.75" size="1" layer="25" font="vector">&gt;NAME</text>
+<text x="2.5" y="-2.75" size="1" layer="25" font="vector">&gt;VALUE</text>
+<smd name="P$33" x="-9.75" y="-1.25" dx="1" dy="2" layer="1"/>
+<smd name="P$34" x="9.75" y="-1.25" dx="1" dy="2" layer="1"/>
+<text x="7" y="-1.25" size="0.8128" layer="21" font="vector">32</text>
 </package>
 </packages>
 <symbols>
@@ -577,7 +624,46 @@
 <gate name="G$1" symbol="CONN-32" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="FPC-PCB-32">
+<device name="" package="FPC-32-WIRE">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="10" pad="P$10"/>
+<connect gate="G$1" pin="11" pad="P$11"/>
+<connect gate="G$1" pin="12" pad="P$12"/>
+<connect gate="G$1" pin="13" pad="P$13"/>
+<connect gate="G$1" pin="14" pad="P$14"/>
+<connect gate="G$1" pin="15" pad="P$15"/>
+<connect gate="G$1" pin="16" pad="P$16"/>
+<connect gate="G$1" pin="17" pad="P$17"/>
+<connect gate="G$1" pin="18" pad="P$18"/>
+<connect gate="G$1" pin="19" pad="P$19"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+<connect gate="G$1" pin="20" pad="P$20"/>
+<connect gate="G$1" pin="21" pad="P$21"/>
+<connect gate="G$1" pin="22" pad="P$22"/>
+<connect gate="G$1" pin="23" pad="P$23"/>
+<connect gate="G$1" pin="24" pad="P$24"/>
+<connect gate="G$1" pin="25" pad="P$25"/>
+<connect gate="G$1" pin="26" pad="P$26"/>
+<connect gate="G$1" pin="27" pad="P$27"/>
+<connect gate="G$1" pin="28" pad="P$28"/>
+<connect gate="G$1" pin="29" pad="P$29"/>
+<connect gate="G$1" pin="3" pad="P$3"/>
+<connect gate="G$1" pin="30" pad="P$30"/>
+<connect gate="G$1" pin="31" pad="P$31"/>
+<connect gate="G$1" pin="32" pad="P$32"/>
+<connect gate="G$1" pin="4" pad="P$4"/>
+<connect gate="G$1" pin="5" pad="P$5"/>
+<connect gate="G$1" pin="6" pad="P$6"/>
+<connect gate="G$1" pin="7" pad="P$7"/>
+<connect gate="G$1" pin="8" pad="P$8"/>
+<connect gate="G$1" pin="9" pad="P$9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="HORIZ" package="FPC-32-HORIZONTAL">
 <connects>
 <connect gate="G$1" pin="1" pad="P$1"/>
 <connect gate="G$1" pin="10" pad="P$10"/>

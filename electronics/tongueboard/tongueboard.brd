@@ -224,7 +224,7 @@
 </library>
 <library name="Hoektronics">
 <packages>
-<package name="FPC-PCB-32">
+<package name="FPC-32-WIRE">
 <smd name="P$1" x="-7.75" y="0" dx="0.3" dy="3.5" layer="1" rot="R180"/>
 <smd name="P$2" x="-7.25" y="0" dx="0.3" dy="3.5" layer="1" rot="R180"/>
 <smd name="P$3" x="-6.75" y="0" dx="0.3" dy="3.5" layer="1" rot="R180"/>
@@ -708,7 +708,7 @@ design rules under a new name.</description>
 <element name="U$255" library="Hoeken" package="61MIL" value="ELECTRODE60MIL" x="25.0214" y="25.7603" rot="MR0"/>
 <element name="U$256" library="Hoeken" package="61MIL" value="ELECTRODE60MIL" x="26.5708" y="25.7603" rot="MR0"/>
 <element name="LOGO1" library="ohw-logo" package="OSHW_10X500_NOTEXT_COPPER" value="OSHW_LOGO_10MIL" x="7.47" y="35.6"/>
-<element name="U$257" library="Hoektronics" package="FPC-PCB-32" value="FPC-0.5-32" x="14.5" y="67.25"/>
+<element name="U$257" library="Hoektronics" package="FPC-32-WIRE" value="FPC-0.5-32" x="14.5" y="67.25"/>
 </elements>
 <signals>
 <signal name="A0">
