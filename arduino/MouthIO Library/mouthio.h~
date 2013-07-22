@@ -1,0 +1,21 @@
+/*
+  Morse.h - Library for reading and writing to a 
+  Created by Alex Hornstein
+  Released into the public domain.
+*/
+#ifndef Morse_h
+#define Morse_h
+
+#include "Arduino.h"
+
+class Morse
+{
+ public:
+  Morse(int pin);
+  void refresh();
+  void dash();
+ private:
+  int _pin;
+};
+
+#endif
